@@ -1,31 +1,24 @@
-import React, { Component } from 'react'
-import { StyleSheet, } from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
+import { StyleSheet } from 'react-native';
+import { createMaterialTopTabNavigator, createAppContainer } from 'react-navigation'
 
 import Explore from '../screen/ExplorePage'
 import Login from '../screen/LoginPage'
-import { Icon } from "react-native-elements";
 
-const PublicNav = createBottomTabNavigator({
+const PublicNav = createMaterialTopTabNavigator({
     Explore: {
         screen: Explore,
         navigationOptions: {
-            tabBarLabel: 'Home',
-            tabBarIcon: ({ tintColor }) => (
-                <Icon name="home" color={tintColor} size={25} />
-            )
+            tabBarLabel: 'Menu',
         }
     },
     Login: {
         screen: Login,
         navigationOptions: {
-            tabBarLabel: 'Login',
-            tabBarIcon: ({ tintColor }) => (
-                <Icon name="face" color={tintColor} size={25} />
-            )
+            tabBarLabel: 'Category',
         }
     }
-}, {
+},
+ {
         tabBarOptions: {
             activeTintColor: '#C40C42',
             inactiveTintColor: 'grey',

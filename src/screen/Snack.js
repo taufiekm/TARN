@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-class LoginPage extends Component {
+class Snack extends Component {
   static navigationOptions = {
     headerTintColor: '#FF9800',
     headerStyle: {
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default LoginPage
+export default Snack

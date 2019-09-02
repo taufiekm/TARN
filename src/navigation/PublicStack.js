@@ -3,24 +3,33 @@ import { createStackNavigator, createAppContainer } from "react-navigation"
 
 import PublicNav from './PublicNav'
 import Explore from '../screen/ExplorePage'
-import Loginnul from '../screen/LoginPage'
+import LoginPage from '../screen/LoginPage'
+import Splash from '../screen/Splash'
+import Drink from '../screen/Drink'
+import Snack from '../screen/Snack'
 
 
-const SatackPublic = createStackNavigator({
+
+const stackpublic = createStackNavigator({
     PublicNav:PublicNav,
     Explore:Explore,
-    LoginStart:Loginnul,
+    LoginPage:LoginPage,
+    Splash:Splash,
+    Drink:Drink,
+    Snack:Snack
 
 } ,{
-    initialRouteName: "PublicNav",
+    initialRouteName: "Splash",
     headerMode: 'none'
 });
+
+const AppContainer = createAppContainer(stackpublic)
 
 class PublicStack extends Component {
     render() {
       return (
-        <PublicStack />
-      );
+        <AppContainer />
+      )
     }
   }
-  export default SatackPublic;
+  export default PublicStack;
