@@ -3,18 +3,32 @@ import { createMaterialTopTabNavigator, createAppContainer } from 'react-navigat
 
 import Explore from '../screen/ExplorePage'
 import Login from '../screen/LoginPage'
+import Drink from '../screen/Drink'
+import Snack from '../screen/Snack'
 
 const PublicNav = createMaterialTopTabNavigator({
     Explore: {
         screen: Explore,
         navigationOptions: {
-            tabBarLabel: 'Menu',
+            tabBarLabel: 'Promo',
         }
     },
     Login: {
         screen: Login,
         navigationOptions: {
-            tabBarLabel: 'Category',
+            tabBarLabel: 'Food',
+        }
+    },
+    Drink:{
+        screen: Drink,
+        navigationOptions:{
+            tabBarLabel: 'Drink',
+        }
+    },
+    Snack:{
+        screen: Snack,
+        navigationOptions:{
+            tabBarLabel: 'Snack',
         }
     }
 },

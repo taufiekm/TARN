@@ -1,1 +1,1 @@
-export const GET_CATEGORISES = 'GET_CATEGORIES' 
+export const GET_MENU = 'GET_MENU' 

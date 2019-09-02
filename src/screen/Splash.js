@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import { Button} from 'react-native-paper';
-import {  Item, Input, Icon} from 'native-base'; 
+import {  Item, Input} from 'native-base'; 
 
 class Login extends Component {
   render() {
