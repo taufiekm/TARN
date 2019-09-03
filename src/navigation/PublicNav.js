@@ -37,6 +37,7 @@ const PublicNav = createMaterialTopTabNavigator({
             activeTintColor: '#C40C42',
             inactiveTintColor: 'grey',
             style: {
+                borderBottomColor: '#C40C42',
                 backgroundColor: '#ffffff',
                 borderTopWidth: 0,
                 shadowOffset: { width: 6, height: 6 },

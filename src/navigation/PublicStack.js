@@ -7,7 +7,9 @@ import LoginPage from '../screen/LoginPage'
 import Splash from '../screen/Splash'
 import Drink from '../screen/Drink'
 import Snack from '../screen/Snack'
-
+import Bill from '../screen/bill'
+import Done from '../screen/Done'
+import Listorder from '../screen/Listorder'
 
 
 const stackpublic = createStackNavigator({
@@ -16,7 +18,10 @@ const stackpublic = createStackNavigator({
     LoginPage:LoginPage,
     Splash:Splash,
     Drink:Drink,
-    Snack:Snack
+    Snack:Snack,
+    Bill:Bill,
+    Done:Done,
+    Listorder:Listorder
 
 } ,{
     initialRouteName: "Splash",

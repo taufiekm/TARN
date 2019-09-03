@@ -1,99 +1,132 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
-import { connect } from 'react-redux';
-import { Card } from 'react-native-elements';
-
-import { getCategories } from '../../src/redux/actions/categories';
-
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Card, Button  } from 'react-native-elements'
+import AsyncStorage from '@react-native-community/async-storage'
+import { connect } from 'react-redux'
 
 class ExplorePage extends Component {
-
-
-  componentDidMount() {
-    this.props.dispatch(getCategories())
+  constructor() {
+    super()
+    this.state = {
+        table: '',
+        count: null
+    }
 }
 
-loading = () => {
-    return (<View style={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center'
-    }}>
-        <ActivityIndicator size={50} />
-    </View>)
+async componentWillMount() {
+  const table = await AsyncStorage.getItem('tableNumber')
+  this.setState({
+      table
+  })
 }
 
-renderItem = ({ item }) => {
-    return (
-        <View style={styles.FlatList}>
-            <TouchableOpacity underlayColor='white'  onPress={() => this.props.navigation.navigate('LoginPage')}>
-                <Card
-                    containerStyle={styles.Card}
-                    image={{ uri: 'https://scm-assets.constant.co/scm/unilever/2bb5223be0548fcc55c230aa5f951219/c5b644d4-7bd0-4021-b3d1-085021fa1b97.jpg' }}
-                >
-                    <Text>{item.name}</Text>
-                </Card>
-            </TouchableOpacity>
-        </View >
-    )
-}
-  
   render() {
-    const extractKey = ({ id }) => id.toString()
     return (
-
       <View style={styles.container}>
-        
-        <View style={{flexDirection:'row', padding:20}}>
+       
+        <View style={{flexDirection:'row', paddingLeft: 20, paddingRight:20, paddingTop:20}}>
           <View style={{flex:1, flexDirection:'row'}}>
             <Text style={styles.header1}>No. Table: </Text>
-            <Text style={styles.header1}>1</Text>
+            <Text style={styles.header1}>{this.state.table}</Text>
           </View>
           <View>
             <Text style={styles.header1}>Time Coundown</Text>
           </View>
         </View>
+        <ScrollView>
+          <View>
+            <Card
+              image={{uri :'http://www.washokusato.co.id/wp-content/uploads/2014/01/LED_1920x1080px_landscape_Member-Promo-Sept-03a-1024x576.jpg'}}>
+              <Text style={{marginBottom: 10}}>
+                The idea with React Native Elements is more about component structure than actual design.
+              </Text>
+              <Button
+                buttonStyle={{borderRadius: 20, backgroundColor:'#C40C42',}}
+                title='VIEW NOW' />
+            </Card>
+          </View>
 
-          {this.props.categories.isLoading == true &&
-            this.loading()
-          }
-          {this.props.categories.isLoading == false &&
-              < FlatList
-                  numColumns={2}
-                  data={this.props.categories.data}
-                  renderItem={this.renderItem}
-                  keyExtractor={extractKey}
-                  style={{ marginBottom: 10, flex: 1 }}
-              />
-            }
+          <View>
+            <Card
+              image={{uri :'http://www.washokusato.co.id/wp-content/uploads/2014/01/LED_1920x1080px_landscape_Member-Promo-Sept-03a-1024x576.jpg'}}>
+              <Text style={{marginBottom: 10}}>
+                The idea with React Native Elements is more about component structure than actual design.
+              </Text>
+              <Button
+                buttonStyle={{borderRadius: 20, backgroundColor:'#C40C42',}}
+                title='VIEW NOW' />
+            </Card>
+          </View>
 
+          <View>
+            <Card
+              image={{uri :'http://www.washokusato.co.id/wp-content/uploads/2014/01/LED_1920x1080px_landscape_Member-Promo-Sept-03a-1024x576.jpg'}}>
+              <Text style={{marginBottom: 10}}>
+                The idea with React Native Elements is more about component structure than actual design.
+              </Text>
+              <Button
+                backgroundColor='#C40C42'
+                buttonStyle={{borderRadius: 20, backgroundColor:'#C40C42',}}
+                title='VIEW NOW' />
+            </Card>
+          </View>
+
+          <View>
+            <Card
+              image={{uri :'http://www.washokusato.co.id/wp-content/uploads/2014/01/LED_1920x1080px_landscape_Member-Promo-Sept-03a-1024x576.jpg'}}>
+              <Text style={{marginBottom: 10}}>
+                The idea with React Native Elements is more about component structure than actual design.
+              </Text>
+              <Button
+                backgroundColor='#C40C42'
+                buttonStyle={{borderRadius: 20, backgroundColor:'#C40C42',}}
+                title='VIEW NOW' />
+            </Card>
+          </View>
+        </ScrollView>
+        {/* <View>
+          
+        <View style={{flex:1, flexDirection:'row', paddingBottom:200}}>
+          <View>
+            <Text>
+              LFNANFJAFKA JSFAJSFJAHFS SFAJHSJKA SFJAHSJFHAS FJFSHAJFHSA JSFHAJHFSA FASFHAKSJHFA FSAJHFAS</Text> 
+            </View>
+          <View>
+            <View>
+              <Text>buttob</Text>
+            </View>
+            <View>
+              <Text>Button</Text>
+            </View>
+          </View>
+        </View>
+        </View> */}
+
+        
       </View>
 
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
       categories: state.categories
   }
 }
 
-export default connect(mapStateToProps)(ExplorePage)
-
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignContent: 'center',
-    justifyContent:'center',
-    padding: 10
+    flexGrow: 1,
+  },
+  header1:{
+    color: 'black'
   },
   Card:{
     height: 200,
     width: 145
     },
-    header1:{
-      color: 'black'
-    }
-});
+})
+
+
+export default connect(mapStateToProps)(ExplorePage) 
