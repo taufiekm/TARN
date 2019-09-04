@@ -15,11 +15,13 @@ Resto App Is an Aplication for User order at Restaurant.
 <p float="left">
   <img src="./src/images/firstpage.png" width="200" height="350" />
 
-  <img src="./image/login.PNG" width="200" height="350" />
+  <img src="./src/images/menupage.png" width="200" height="350" />
 
-  <img src="./image/register.PNG" width="200" height="350" />
+  <img src="./image/orderlist.PNG" width="200" height="350" />
 
-  <img src="./image/profile.PNG" width="200" height="350" />
+  <img src="./image/billpage.PNG" width="200" height="350" />
+
+  <img src="./image/endpage.PNG" width="200" height="350" />
 </p>
 
 ## Fitures
