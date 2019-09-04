@@ -42,16 +42,17 @@ class splash extends Component {
             backgroundColor='#C40C42'
             barStyle='light-content'
           />
-          <Text style={styles.Text}>WELCOME TO TaMa RESTO</Text>
-          {/* <View>
+          <Text style={styles.Text}>WELCOME TO{"\n"}RESTO APP</Text>
+          <View style={{alignItems:'center', paddingBottom: 20}}>
             <Image
-              style={{width: 150, height: 180}}
-              source={{uri:'https://png.pngtree.com/element_our/png/20180913/food-logo-vector-design.-restaurant-and-cafe-logo.-png_95106.jpg'}}
+            style={{width: 120, height: 150}}
+            source={require('../images/logo2.png')}
             />
-          </View> */}
-          <View style={{padding: 20, paddingTop: 35}}>
+          </View>
+          <Text style={styles.intro}>pelase Insert Your Table Number</Text>
+          <View style={{padding: 20, paddingTop: 15}}>
             <Item regular style={{borderRadius: 20, Colors:'#C40C42', alignItems:'center'}}>
-              <Input placeholder='No. Table' keyboardType={'numeric'} onChangeText={this.onTable}/>
+              <Input style={{textAlign:'center', color:'white'}} placeholder='No. Table' keyboardType={'numeric'} onChangeText={this.onTable}/>
             </Item>
           </View>
           <View style={{paddingLeft:20, paddingRight:20,}}>
@@ -78,12 +79,12 @@ class splash extends Component {
         flex: 1,
         padding: 20,
         alignContent: 'center',
-        justifyContent:'center'
+        justifyContent:'center',
     }, 
     Text:{
         textAlign:'center',
-        fontSize:25,
-        paddingBottom:50,
+        fontSize: 25,
+        paddingBottom: 35,
         color:'white'
     },
     input:{
@@ -91,7 +92,10 @@ class splash extends Component {
       borderColor:"#C40C42",
       paddingTop:5
     },
-    
+    intro:{
+        color:'white',
+        textAlign:'center'
+      },
     icon:{
       color:"#C40C42" 
       

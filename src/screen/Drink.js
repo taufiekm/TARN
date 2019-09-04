@@ -18,7 +18,7 @@ class Drink extends Component {
       'Please Check Again',
       [
         {text: 'NO', onPress: () => console.warn('NO Pressed')},
-        {text: 'YES',  onPress : () => this.props.navigation.navigate('Bill')} 
+        {text: 'YES',  onPress : () => this.props.navigation.navigate('Done')} 
 
       ]
     );
@@ -89,17 +89,18 @@ class Drink extends Component {
         </ScrollView>
 
         <View style={{flexDirection:'row', justifyContent: 'space-between',  paddingBottom:20, paddingLeft:20, paddingRight:20}}>
-          <View>
+        <View>
             <Button buttonStyle={{borderRadius: 10, backgroundColor:'#C40C42', width: 80}}
              title='List Order' onPress={() => this.props.navigation.navigate('Listorder')}/>
           </View>
           <View>
             <Button buttonStyle={{borderRadius: 10, backgroundColor:'#C40C42', width: 80}}
-             title='Bill'  onPress={() => this.props.navigation.navigate('Bill')}/>
+             title= 'Bill' onPress={() => this.props.navigation.navigate('Bill')}/>
           </View>
           <View>
-            <Button buttonStyle={{borderRadius: 10, backgroundColor:'#C40C42', width: 80}}
-            title='Confrim' onPress={() => this.button()}/>
+            <Button buttonStyle={{borderRadius: 10, backgroundColor:'#C40C42', width: 80 }}
+            onPress={() => this.button()}
+            title='Confrim'/>
           </View>
         </View>
 

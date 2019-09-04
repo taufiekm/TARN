@@ -30,10 +30,10 @@ class bill extends React.Component {
               Waiting
             </Text>
             <Text style={{fontSize: 17, textAlign: 'center', marginLeft: 15}}>
-              Nasi Kerabu
+              
             </Text>
             <Text style={{fontSize: 17, textAlign: 'center', marginLeft: 15}}>
-              35.000
+              Rp. 0
             </Text>
           </View>
 
@@ -69,19 +69,20 @@ class bill extends React.Component {
                   marginVertical: 5,
                   marginHorizontal: 15,
                   fontWeight: 'bold',
+                  color:'white'
                 }}>
                 Total
               </Text>
             </View>
 
             <View style={{flex: 1}}>
-              <Text style={styles.bill}>0</Text>
+              <Text style={styles.bill}>RP. 0</Text>
 
-              <Text style={styles.bill}>0</Text>
+              <Text style={styles.bill}>Rp. 0</Text>
 
-              <Text style={styles.bill}>0</Text>
+              <Text style={styles.bill}>Rp. 0</Text>
 
-              <Text style={styles.bill}>0</Text>
+              <Text style={styles.bill}>Rp. 0</Text>
 
               <Text
                 style={{
@@ -91,7 +92,7 @@ class bill extends React.Component {
                   fontWeight: 'bold',
                   color:'white'
                 }}>
-                40.425
+                Rp. 0
               </Text>
             </View>
           </View>
